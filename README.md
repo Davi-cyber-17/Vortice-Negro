@@ -1,1 +1,0 @@
-# Vortice-Negro
