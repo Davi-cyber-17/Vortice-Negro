@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#050816">
+<title>Vórtice Negro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.4/dist/peerjs.min.js"></script>
+</head>
+<body>
+<canvas id="c"></canvas>
+
+<main id="menu" class="screen">
+  <h1>Vórtice<span>Negro</span></h1>
+  <p class="sub">ENGULA A CIDADE · JOGUE EM QUALQUER DISPOSITIVO</p>
+
+  <div id="home" class="panel">
+    <button class="btn big" id="bOnline">Modo Online</button>
+    <button class="btn big alt" id="bLocal">Modo Local</button>
+  </div>
+
+  <div id="online" class="panel hide">
+    <input id="nick" maxlength="14" placeholder="Seu apelido">
+    <button class="btn" id="bCreate">Criar sala</button>
+    <div class="row">
+      <input id="code" maxlength="5" placeholder="Código da sala">
+      <button class="btn alt" id="bJoin">Entrar</button>
+    </div>
+    <p class="msg" id="msgOn"></p>
+    <button class="link" data-back>Voltar</button>
+  </div>
+
+  <div id="lobby" class="panel hide">
+    <p>Sala <b id="roomCode" class="code"></b></p>
+    <p class="hint">Compartilhe o código. De 2 a 16 jogadores.</p>
+    <ul id="plist"></ul>
+    <div id="durBox" class="durbox">
+      <label>Duração da rodada: <b id="dVal">3 min</b></label>
+      <input type="range" id="dRange" min="1" max="10" value="3">
+    </div>
+    <button class="btn" id="bStart">Iniciar partida</button>
+    <p class="msg" id="msgLb"></p>
+    <button class="link" id="bLeave">Sair da sala</button>
+  </div>
+
+  <div id="local" class="panel hide">
+    <label>Jogadores (você + bots): <b id="nVal">6</b></label>
+    <input type="range" id="nRange" min="2" max="16" value="6">
+    <button class="btn" id="bPlayLocal">Jogar</button>
+    <button class="link" data-back>Voltar</button>
+  </div>
+</main>
+
+<div id="end" class="screen hide">
+  <h2>Fim da partida</h2>
+  <ol id="rank"></ol>
+  <button class="btn" onclick="location.reload()">Voltar ao menu</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
